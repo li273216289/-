@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <meta name="viewport" content="width=device-width"/>
+    <title>脉聘-你的职业顾问</title>
+    <link rel="stylesheet" type="text/css" href="css/common.css" />
+    <link rel="stylesheet" type="text/css" href="css/animate.css" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+</head>
+<body>
+    <div class="index pd-top">
+        <div class="history-item lr-mg">
+            <div class="l-line-title">求职隐私设置</div>
+            <div class="privacy-item">
+                <ul class="top-list">
+                    <li class="on"><i class="ico"></i>公开<em>（所有企业都可以搜索到你的简历）</em></li>
+                    <li><i class="ico"></i>隐藏<em>（所有企业都无法搜索到你的简历）</em></li>
+                    <li><i class="ico"></i>半公开<em>（我不想让某些企业搜索到我）</em></li>
+                </ul>
+                <ul class="sub-list">
+                    <li><input type="text" class="inp"><a class="btn-close" href="javascript:;"></a></li>
+                    <li><input type="text" class="inp"><a class="btn-close" href="javascript:;"></a></li>
+                    <li><input type="text" placeholder="请输入公司名称" class="inp"><a class="btn-add" href="javascript:;">新增</a></li>
+                </ul>
+                <div class="btn-item">
+                    <p><a class="orange-btn btn-bg" href="#">保存</a><p>
+                    <p><a class="text-btn" href="#">清空</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="foot-nav">
+        <ul>
+            <li class="job"><i></i><span>工作机会</span></li>
+            <li class="my on"><i></i><span>个人中心</span></li>
+        </ul>
+    </div>
+    
+    <script src="js/vendor/JQuery/jquery-1.9.0.js" type="text/javascript"></script>
+    <script src="js/core/base.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      $(".job").click(function(){
+        window.location.href="1.html"
+      })
+      $(".privacy-item .top-list li").click(function(){
+        $(".privacy-item .top-list li").removeClass('on');
+        $(this).addClass("on");
+      })
+      $(".privacy-item .sub-list li .btn-close").click(function(){
+        $(".privacy-item .sub-list li input").val("")
+      });
+      $(".privacy-item .btn-item .text-btn").click(function(){
+        $(".privacy-item .sub-list li input").val("")
+      });
+    </script>
+</body>
+</html>

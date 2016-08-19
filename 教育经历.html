@@ -1,0 +1,176 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <meta name="viewport" content="width=device-width"/>
+    <title>脉聘-你的职业顾问</title>
+    <link rel="stylesheet" type="text/css" href="css/common.css" />
+    <link rel="stylesheet" type="text/css" href="css/animate.css" />
+    <link rel="stylesheet" type="text/css" href="css/choose.css" />
+    <link href="css/plugins/mobiscroll.core-2.5.2.css" rel="stylesheet" type="text/css" />
+    <link href="css/plugins/mobiscroll.animation-2.5.2.css" rel="stylesheet" type="text/css" />
+    <link href="css/plugins/mobiscroll.android-ics-2.5.2.css" rel="stylesheet" type="text/css" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+</head>
+<body>
+    <div class="index pd-top">
+        <div class="attach-box lr-mg">
+            <div class="l-line-title">教育经历</div>
+            <div class="attach-item">
+                <div class="attach-item-list">
+                    <div class="attach-cont-item" id="j-choosebtn">
+                        <span class="tit-text">学校名称</span>
+                        <span class="text-info"><input type="text" class="inp" /></span>
+                        <div class="school">
+                            <ul>
+                                <li class="school-item">重庆大学</li>
+                                <li class="school-item">重庆三峡学院</li>
+                                <li class="school-item">西南大学</li>
+                                <li class="school-item">重庆理工学院</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="attach-cont-item">
+                        <span class="tit-text">所学专业</span>
+                        <span class="text-info"><input type="text" class="inp" /></span>
+                    </div>
+                    <div class="attach-cont-item" id="j-start">
+                        <span class="tit-text">入学时间</span>
+                        <span class="text-info"></span>
+                        <a class="btn-open" href="javascript:;"></a>
+                        <input type="text" name="startTime" id="startTime" />
+                    </div>
+                    <div class="attach-cont-item" id="j-end">
+                        <span class="tit-text">毕业时间</span>
+                        <span class="text-info gray"></span>
+                        <a class="btn-open" href="javascript:;"></a>
+                        <input type="text" name="endTime" id="endTime" />
+                    </div>
+                    <div class="attach-cont-item">
+                        <span class="tit-text">学&nbsp;&nbsp;&nbsp;&nbsp;历</span>
+                        <span class="text-info"><input type="text" class="inp" /></span>
+                    </div>
+                </div>
+                
+                <div class="btn-item">
+                    <a class="orange-btn" href="#">完成</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="foot-nav">
+        <ul>
+            <li class="job on"><i></i><span>工作机会</span></li>
+            <li class="my"><i></i><span>个人中心</span></li>
+        </ul>
+    </div>
+    
+    <script src="js/vendor/JQuery/jquery-1.9.0.js" type="text/javascript"></script>
+    <script src="js/core/base.js" type="text/javascript"></script>
+    <script src="js/plugins/mobiscroll.core-2.5.2.js" type="text/javascript"></script>
+    <script src="js/plugins/mobiscroll.core-2.5.2-zh.js" type="text/javascript"></script>
+    <script src="js/plugins/mobiscroll.datetime-2.5.1.js" type="text/javascript"></script>
+    <script src="js/plugins/mobiscroll.datetime-2.5.1-zh.js" type="text/javascript"></script>
+    <script src="js/plugins/mobiscroll.android-ics-2.5.2.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var chooseBtn = $('#j-choosebtn').find('input'),
+                schoolList = $('.school');
+
+            //有数据的情况下面的这个click事件删掉
+
+            chooseBtn.click(function(){
+                schoolList.slideDown();
+            });
+
+            $('#j-choosebtn').on('click','.school-item',function(){
+                var val = $(this).html();
+                
+                chooseBtn.val(val);
+                schoolList.slideUp();
+            });
+
+
+            // 用户输入关键字生成备选框调下面的东西
+
+
+
+
+            // chooseBtn.change(function(){
+            //     var val = $(this).val();
+            //     $.ajax({
+            //         url:'xxx',
+            //         type:'get',
+            //         dataType:'xxx',
+            //         data:{
+            //             val:val
+            //         },
+            //         success:function(db){
+            //             //生动备选框
+            //             render(db);
+            //         },
+            //         error:function(err){
+            //             console.log('err')
+            //         }
+            //     });
+            // });
+
+            // function render(db){
+            //     $('.school ul').html('');
+            //     var _html = [];
+            //     for(var i=0,len=db.length;i<len;++i){
+            //         _html.push('<li>'+db[i]+'</li>');
+            //     }
+
+            //     _html = _html.join('');
+
+            //     $('.school ul').appdne(_html);
+            //     schoolList.slideDown();
+            // }
+
+
+
+            //点击入学时间与毕业时间
+            var currYear = (new Date()).getFullYear();  
+            var opt={};
+            opt.date = {preset : 'date'};
+            opt.datetime = {preset : 'datetime'};
+            opt.time = {preset : 'time'};
+            opt.default = {
+                theme: 'android-ics light',
+                display: 'modal', 
+                mode: 'scroller', 
+                lang:'zh',
+                dateForamt: 'yyyy-mm-dd',
+                dateOrder: 'yymm',
+                startYear:currYear - 50,
+                endYear:currYear,
+                animate:'slideup'
+                // defaultValue : new Date('1998-2')
+            };
+
+            $("#startTime").val('').scroller('destroy').scroller($.extend(opt['date'], opt['default']));
+            $("#endTime").val('').scroller('destroy').scroller($.extend(opt['date'], opt['default']));
+
+            $("#startTime").change(function(){
+                var val = $(this).val();
+                val = val.split('-');
+
+                var str = val[0] + '-' +val[1];
+
+                $('#j-start').find('.text-info').html(str);
+            });
+            $("#endTime").change(function(){
+                var val = $(this).val();
+                val = val.split('-');
+
+                var str = val[0] + '-' +val[1];
+                // console.log(str);
+                $('#j-end').find('.text-info').html(str);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <meta name="viewport" content="width=device-width"/>
+    <title>脉聘-你的职业顾问</title>
+    <link rel="stylesheet" type="text/css" href="css/common.css" />
+    <link rel="stylesheet" type="text/css" href="css/animate.css" />
+</head>
+<body>
+    <div class="index pd-top">
+        <div class="top-search lr-mg">
+            <a class="search-btn" href="javascript:;"></a>
+            <input type="text" class="search-inp" placeholder="搜索职位或公司"></input>
+            <!-- <div class="switch">
+                <span class="switch-btn"><b>职位</b><i class="narrow"></i></span>
+                <div class="switch-pop">
+                    <span><i class="text-icon icon-position"></i><b>职位</b></span>
+                    <span><i class="text-icon icon-company"></i><b>公司</b></span>
+                </div>
+                <input data-selector="search-type" value="0" type="hidden">
+            </div> -->
+        </div>
+        <div class="industry-ico-list lr-mg">
+            <ul>
+                <li>
+                    <i class="hlw"></i>
+                    <span>互联网</span>
+                </li>
+                <li>
+                    <i class="yy"></i>
+                    <span>医药</span>
+                </li>
+                <li>
+                    <i class="jr"></i>
+                    <span>金融</span>
+                </li>
+                <li>
+                    <i class="zz"></i>
+                    <span>制造</span>
+                </li>
+            </ul>
+        </div>
+        <div class="job-list-item lr-mg">
+            <ul>
+                <li>
+                    <p class="name">产品总监<i class="j">荐</i></p>
+                    <p class="company">重庆微跑科技有限公司</p>
+                    <p class="info">
+                        <span>重庆，渝中区</span>
+                        <span>8年</span>
+                        <span>大专</span>
+                        <span class="time">刷新时间：16-04-02</span>
+                    </p>
+                    <p class="salary">20-30 万<em>/年</em></p>
+                </li>
+                <li>
+                    <p class="name">产品总监<i class="j">荐</i></p>
+                    <p class="company">重庆微跑科技有限公司</p>
+                    <p class="info">
+                        <span>重庆，渝中区</span>
+                        <span>8年</span>
+                        <span>大专</span>
+                        <span class="time">刷新时间：16-04-02</span>
+                    </p>
+                    <p class="salary">20-30 万<em>/年</em></p>
+                </li>
+                <li>
+                    <p class="name">产品总监<i class="j">荐</i></p>
+                    <p class="company">重庆微跑科技有限公司</p>
+                    <p class="info">
+                        <span>重庆，渝中区</span>
+                        <span>8年</span>
+                        <span>大专</span>
+                        <span class="time">刷新时间：16-04-02</span>
+                    </p>
+                    <p class="salary">20-30 万<em>/年</em></p>
+                </li>
+                <li>
+                    <p class="name">产品总监<i class="j">荐</i></p>
+                    <p class="company">重庆微跑科技有限公司</p>
+                    <p class="info">
+                        <span>重庆，渝中区</span>
+                        <span>8年</span>
+                        <span>大专</span>
+                        <span class="time">刷新时间：16-04-02</span>
+                    </p>
+                    <p class="salary">20-30 万<em>/年</em></p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="foot-nav">
+        <ul>
+            <li class="job on"><i></i><span>工作机会</span></li>
+            <li class="my"><i></i><span>个人中心</span></li>
+        </ul>
+    </div>
+    
+    <script src="js/vendor/JQuery/jquery-1.9.0.js" type="text/javascript">  
+    </script>
+    <script src="js/core/base.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+        $(".my").click(function(){
+            $(".job").removeClass('on');
+            $(this).addClass("on");
+        });
+        $(".my").click(function(){
+            window.location.href="个人中心.html"
+        })
+         $(".top-search .search-btn").click(function(){
+            window.location.href="搜索列表-职位全重庆.html"
+        })
+        $(".job-list-item ul li").click(function(){
+            window.location.href="职位详情.html"
+        });
+    </script>
+</body>
+</html>
