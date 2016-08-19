@@ -1,0 +1,136 @@
+//放大
+div.blowup{
+	animation:blowup 1s;
+	display: block;
+}
+//居中
+.center{
+	transform: translate(-50%,-50%);
+	z-index: 101;
+}
+//缩小
+div.shrink{
+	animation: shrink 1s;
+}
+//初始隐藏
+.succ-layer,
+.friend-layer,
+.share-layer,
+.perfect-resume-layer{
+	display: none;
+}
+
+.share-layer{
+	transform: translate(-50%,-50%);
+	z-index: 100;
+}
+
+div.shows{
+	animation: show 1s;
+	display: block;
+}
+
+.share-btn{
+	display: none;
+}
+
+//放大动画
+@-webkit-keyframes blowup{
+	0%{
+	  -webkit-transform: translateX(-50%) translateY(-50%) scale(0)
+	}
+	100%{
+	  -webkit-transform: translateX(-50%) translateY(-50%) scale(1)
+	}
+}
+@-moz-keyframes blowup{
+	0%{
+	  -moz-transform: translateX(-50%) translateY(-50%) scale(0)
+	}
+	100%{
+	  -moz-transform: translateX(-50%) translateY(-50%) scale(1)
+	}
+}
+
+// 缩小动画
+@-webkit-keyframes shrink{
+	0%{
+		-webkit-transform: translateX(-50%) translateY(-50%) scale(1);
+		opacity: 1;
+	}
+	100%{
+		-webkit-transform: translateX(-50%) translateY(-50%) scale(.3);
+		opacity: 0;
+	}
+}
+@-moz-keyframes shrink{
+	0%{
+		-moz-transform: translateX(-50%) translateY(-50%) scale(1);
+		opacity: 1;
+	}
+	100%{
+		-moz-transform: translateX(-50%) translateY(-50%) scale(.3);
+		opacity: 0;
+	}
+}
+
+//渐显动画
+@-webkit-keyframes show{
+	0%{
+		-webkit-transform: translateX(-50%) translateY(-50%) scale(0);
+		opacity: 0;
+	}
+	100%{
+		-webkit-transform: translateX(-50%) translateY(-50%) scale(1);
+		opacity: 1;
+	}
+}
+@-moz-keyframes show{
+	0%{
+		-moz-transform: translateX(-50%) translateY(-50%) scale(0);
+		opacity: 0;
+	}
+	100%{
+		-moz-transform: translateX(-50%) translateY(-50%) scale(1);
+		opacity: 1;
+	}
+}
+
+//弹性动画
+div.bouncein{
+	display: block;
+	-webkit-animation:bouncein 1s .2s ease both;
+	-moz-animation:bouncein 1s .2s ease both;
+}
+@-webkit-keyframes bouncein{
+	0%{
+		opacity:0;
+		-webkit-transform: scale(.3)
+	}
+	50%{
+		opacity:1;
+		-webkit-transform: scale(1.05)
+	}
+	70%{
+		-webkit-transform: scale(.9)
+	}
+	100%{
+		-webkit-transform: scale(1)
+	}
+}
+@-moz-keyframes bouncein{
+	0%{
+		opacity:0;
+		-moz-transform: scale(.3)
+	}
+	50%{
+		opacity:1;
+		-moz-transform: scale(1.05)
+	}
+	70%{
+		-moz-transform: scale(.9)
+	}
+	100%{
+		-moz-transform: scale(1)
+	}
+}
