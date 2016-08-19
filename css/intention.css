@@ -1,0 +1,56 @@
+.box {
+  position: fixed;
+  left: -100%;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transition: left .5s;
+  -moz-transition: left .5s;
+  /* Firefox 4 */
+
+  -webkit-transition: left .5s;
+  /* Safari 和 Chrome */
+
+  -o-transition: left .5s;
+}
+.box .industry-list {
+  background: white;
+  margin: .3rem .1rem 0 .1rem;
+}
+.box .bubble a {
+  display: inline-block;
+  height: 0.2rem;
+  line-height: .2rem;
+  padding: 0 .1rem;
+  font-size: .1rem;
+  border-radius: .15rem;
+  border: 1px solid #ed721a;
+  margin: .1rem 0;
+  color: #636363;
+  position: relative;
+}
+.box .bubble a em {
+  display: block;
+  position: absolute;
+  right: -2px;
+  top: -2px;
+  width: .1rem;
+  height: .1rem;
+  line-height: .1rem;
+  text-align: center;
+}
+.box .btn-item {
+  padding-top: .2rem;
+  background: white;
+}
+div.moveright {
+  left: 0;
+}
+div#j-occ .industry-list .listwrap {
+  width: 33%;
+  height: 100%;
+  float: left;
+}
+div#j-occ .industry-list .listwrap .list {
+  width: 100%;
+}

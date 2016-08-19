@@ -1,0 +1,22 @@
+.school {
+  display: none;
+}
+.school ul li {
+  height: .42rem;
+  line-height: .42rem;
+  font-size: .12rem;
+}
+#j-start,
+#j-end {
+  position: relative;
+}
+#startTime,
+#endTime {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  display: block;
+}
